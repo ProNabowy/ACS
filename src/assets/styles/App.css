@@ -1,10 +1,20 @@
-body {}
+* {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+  outline: none;
+}
+
+:root {}
 
 .container {
   padding: 0 10px;
   margin: auto;
 }
 
+body {
+  font-family: "Montserrat", sans-serif;
+}
 
 img {
   width: 100%;
@@ -17,4 +27,148 @@ html {
 
 label {
   cursor: pointer;
+}
+
+#root {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+header ul a {
+  transition: 0.5s all ease-in-out;
+}
+
+header a {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 60px;
+}
+
+header a.active {
+  color: #B3DFFF;
+}
+
+header a::after {
+  content: '';
+  width: 0%;
+  height: 4px;
+  background-color: #B3DFFF;
+  transition: 0.5s all ease-in-out;
+  position: absolute;
+  left: 0;
+  bottom: 0;
+}
+
+header a.active::after {
+  content: '';
+  width: 100%;
+  height: 4px;
+  background-color: #B3DFFF;
+  position: absolute;
+  left: 0;
+  bottom: 0;
+}
+
+header.bg-white a.active {
+  color: #1e3d81 !important;
+}
+
+header.bg-white a.active::after {
+  background-color: #1e3d81 !important;
+}
+
+.min-title {
+  color: #0D1A36;
+  font-size: 24px;
+  font-weight: 600;
+  padding: 8px 16px;
+  padding-left: 24px;
+  background-color: rgba(179, 223, 255, 0.30);
+  width: fit-content;
+  position: relative;
+  margin-bottom: 24px;
+}
+
+.min-title::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 12px;
+  height: 100%;
+  background: linear-gradient(94deg, #1E3D81 -1.21%, #378FEB 58.66%, #B3DFFF 116.84%);
+
+}
+
+.swiper-button-next:after,
+.swiper-button-prev:after {
+  font-size: 25px !important;
+  font-weight: 700;
+}
+
+.accordion-question {
+  transition: 0.5s all ease-in-out;
+  max-height: 47px;
+}
+
+.accordion-question:last-child {
+  max-height: 45px;
+}
+
+.accordion-question:not(.active) {
+  padding: 10px 0 !important;
+}
+
+.accordion-question.active {
+  max-height: 200px;
+  align-items: center;
+}
+
+.accordion-question img {
+  transition: 0.5s all ease-in-out;
+}
+
+.accordion-question.active img {
+  transform: rotate(180deg);
+}
+
+.angle {
+  width: 120px;
+  height: 40px;
+  background-color: #378FEB;
+  clip-path: polygon(60% 0, 100% 50%, 60% 100%, 0 100%, 0 0);
+  position: relative;
+  z-index: 10;
+}
+
+.angle-white {
+  width: 120px;
+  height: 40px;
+  background-color: white;
+  clip-path: polygon(60% 0, 100% 50%, 60% 100%, 0 100%, 0 0);
+  position: absolute;
+  left: 18px;
+  top: 0;
+  z-index: 1;
+}
+
+.abs-left {
+  position: absolute;
+  left: 0;
+  top: 0;
+}
+
+.flex-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.flex-between {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
